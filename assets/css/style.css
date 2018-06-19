@@ -3,3 +3,22 @@
  min-width: 400px;
  min-height: 400px;
 }
+
+.input-search{
+    display: inline-block;
+    width: calc(100% - 44px);
+    vertical-align: middle;
+}
+
+.menu-collapse {
+    border-top: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+@media (min-width: 768px){
+.menu-collapse.collapse {
+    display: block!important;
+    overflow: visible!important;
+}
+}
