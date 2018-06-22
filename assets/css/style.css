@@ -6,24 +6,57 @@
 
 .input-search{
     display: inline-block;
-    width: calc(100% - 44px)!important;
+    width: calc(100% - 88px)!important;
     vertical-align: middle;
 }
-.menu{
+.test{
+    background-color: blue!important;
+}
+.thumbnail>img{
+    border-radius: 4px;
+    transition: .5s ease;
+}
+.thumbnail>img:hover{
+    opacity: .8;
+    filter: saturate(110%) contrast(110%);
+}
+#menu{
     background-color: #f8f8f8;
     border-radius: 4px;
     border-color: #e7e7e7;
     text-align: center;
     border-top: 1px;
+    padding: 15px;
 }
 .menu-collapse {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-
-@media (min-width: 768px){
-.menu-collapse.collapse {
-    display: block!important;
-    overflow: visible!important;
+.navbar-salutation  {
+    float: right;
+    margin-right: 15px;
 }
+@media (min-width: 768px){
+
+
+}
+/* Extra small devices (phones, less than ) */
+@media (max-width: 767px) { 
+    
+ }
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) { 
+.no-collapse-md{
+    display: block !important;
+}
+ }
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    .no-collapse-lg{
+        display: block !important;
+    }
 }

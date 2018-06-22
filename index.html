@@ -13,12 +13,12 @@
 </head>
 
 <body>
+	<!--Navbar-->
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-				 aria-expanded="false">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -28,7 +28,7 @@
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
 				<div id="usuarioDeslogado">
 					<form class="navbar-form navbar-right">
 						<div class="form-group">
@@ -37,22 +37,13 @@
 						<div class="form-group">
 							<input type="password" class="form-control" placeholder="senha" id="senha">
 						</div>
-						<button type="button" class="btn btn-primary" onclick="entrar();">Entrar</button>
+						<button type="button" class="btn btn-primary form-control" onclick="entrar();">Entrar</button>
+						<button type="button" class="btn btn-primary form-control" onclick="Cadastrar();">Cadastrar</button>
 					</form>
 				</div>
 				<div id="usuarioLogado" class="hide">
-					<form class="navbar-form navbar-right">
-						<!-- <div class="form-group">
-									<p>Olá klenner!</p>
-								</div> -->
-						<!-- <p class="navbar-text">Olá klenner!</p> -->
-						<button type="button" class="btn btn-danger">Sair</button>
-					</form>
-					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<p class="navbar-text">Olá klenner!</p>
-						</li>
-					</ul>
+					<button type="button" class="btn navbar-btn btn-danger navbar-right pull-right">Sair</button>
+					<p class="pull-right navbar-salutation navbar-text">Olá Usuário!</p>
 				</div>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -60,73 +51,58 @@
 		<!-- /.container-fluid -->
 	</nav>
 
-
-
-
-
-
-
-
-
-
-
-
-	<nav class="navbar navbar-default" id="header">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button class="navbar-toggle" data-toggle="collapse" data-target="#nav-collapse">
-					<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-				</button>
-				<a class="navbar-brand" href="#">Album de Fotos</a>
-			</div>
-			<div id="nav-collapse" class="navbar-right navbar-collapse collapse">
-				<div class="col-xs-12 col-sm-10 col-md-10 ">
-					<form class="navbar-form " role="search">
-						<div class="form-group">
-							<input type="text" class="form-control input-search" placeholder="Search">
-							<button type="submit" class="btn btn-default">
-								<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-							</button>
-						</div>
-					</form>
-				</div>
-				<div class="col-xs-12 col-sm-2 col-md-2 btn-group" role="group">
-					<button type="button" class="btn btn-danger navbar-btn">Sair</button>
-				</div>
-			</div>
-		</div>
-	</nav>
-
+	<!--Albuns-->
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-2 menu menu-collapse collapse" id="menu">
-				<h3> Albuns </h3>
-				<ul class="nav nav-pills nav-stacked">
-					<li role="navigation" class="active">
-						<a href="#">Album 1</a>
-					</li>
-					<li role="navigation">
-						<a href="#">Album 2</a>
-					</li>
-					<li role="navigation">
-						<a href="#">Album 3</a>
-					</li>
-					<li role="navigation">
-						<a href="#">Album 4</a>
-					</li>
-					<li role="navigation">
-						<a href="#">Album 5</a>
-					</li>
-					<li role="navigation">
-						<a href="#">
-							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-						</a>
-					</li>
-				</ul>
+			<div class="col-md-3 col-lg-2 menu" id="menu">
+				<div class="row">
+					<div class="pull-left visible-xs visible-sm">
+						<button class="btn btn-default" aria-label="Left Align" data-toggle="collapse" data-target="#albuns">
+							<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+						</button>
+						<!--<p class="pull-left">Albuns</p>-->
+					</div>
+					<div class="">
+
+						<form class="" role="search">
+							<div class="form-group">
+								<input type="text" class="form-control input-search" placeholder="Search">
+								<button type="submit" class="btn btn-default">
+									<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="menu-collapse collapse no-collapse-md no-collapse-lg" id="albuns">
+					<h3> Albuns </h3>
+					<ul class="nav nav-pills nav-stacked">
+						<li role="navigation" class="active">
+							<a href="#">Album 1</a>
+						</li>
+						<li role="navigation">
+							<a href="#">Album 2</a>
+						</li>
+						<li role="navigation">
+							<a href="#">Album 3</a>
+						</li>
+						<li role="navigation">
+							<a href="#">Album 4</a>
+						</li>
+						<li role="navigation">
+							<a href="#">Album 5</a>
+						</li>
+						<li role="navigation">
+							<a href="#">
+								<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 
-
-			<div class="col-md-10">
+			<!--Fotos-->
+			<div class="col-md-9 col-lg-10">
 				<h2> Fotos </h2>
 				<div class="row">
 					<div class="col-xs-6 col-sm-6 col-md-3 ">
@@ -145,8 +121,6 @@
 						</a>
 					</div>
 
-					<!--</div>-->
-					<!--<div class="row">-->
 					<div class="col-xs-6 col-sm-6 col-md-3">
 						<a href="#" class="thumbnail">
 							<img src="https://bit.ly/2HQc3tK" alt="...">
