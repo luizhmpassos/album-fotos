@@ -9,7 +9,21 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-	<title>Document</title>
+
+	<meta name="google-signin-scope" content="profile">
+	<meta name="google-signin-client_id" content="74962652042-kb64ctk5r1aretpsasgm96j514k3s2t0.apps.googleusercontent.com">
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<!--<script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>-->
+	<!--<script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>-->
+	<!--<script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>-->
+	<!--<script src="assets/js/auth.js"></script>-->
+	<!--<script src="assets/js/firebase-script.js"></script>-->
+
+	<!--<script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>-->
+	<title>Album</title>
 </head>
 
 <body>
@@ -29,7 +43,7 @@
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
-				<div id="usuarioDeslogado">
+				<!--<div id="usuarioDeslogado">
 					<form class="navbar-form navbar-right">
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="login" id="login">
@@ -37,12 +51,14 @@
 						<div class="form-group">
 							<input type="password" class="form-control" placeholder="senha" id="senha">
 						</div>
-						<button type="button" class="btn btn-primary form-control" onclick="entrar();">Entrar</button>
-						<button type="button" class="btn btn-primary form-control" onclick="Cadastrar();">Cadastrar</button>
+						<button type="button" class="btn btn-primary form-control" onclick="entrar()">Entrar</button>
+						<button type="button" class="btn btn-primary form-control" onclick="handleSignInClick();">Cadastrar</button>
+
 					</form>
-				</div>
+				</div>-->
+
 				<div id="usuarioLogado" class="hide">
-					<button type="button" class="btn navbar-btn btn-danger navbar-right pull-right">Sair</button>
+					<button onclick="signOutk()" type="button" class="btn navbar-btn btn-danger navbar-right pull-right">Sair</button>
 					<p class="pull-right navbar-salutation navbar-text">Olá Usuário!</p>
 				</div>
 			</div>
@@ -51,9 +67,10 @@
 		<!-- /.container-fluid -->
 	</nav>
 
-	<!--Albuns-->
-	<div class="container-fluid">
-		<div class="row">
+	
+	<div id="conteudo" class="container-fluid">
+		<div id="conteudo_logado" class="row hide">
+			<!--Albuns-->
 			<div class="col-md-3 col-lg-2 menu" id="menu">
 				<div class="row">
 					<div class="pull-left visible-xs visible-sm">
@@ -78,20 +95,9 @@
 					<h3> Albuns </h3>
 					<ul class="nav nav-pills nav-stacked">
 						<li role="navigation" class="active">
-							<a href="#">Album 1</a>
+							<a  href="#">Album 1</a>
 						</li>
-						<li role="navigation">
-							<a href="#">Album 2</a>
-						</li>
-						<li role="navigation">
-							<a href="#">Album 3</a>
-						</li>
-						<li role="navigation">
-							<a href="#">Album 4</a>
-						</li>
-						<li role="navigation">
-							<a href="#">Album 5</a>
-						</li>
+
 						<li role="navigation">
 							<a href="#">
 								<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -104,8 +110,9 @@
 			<!--Fotos-->
 			<div class="col-md-9 col-lg-10">
 				<h2> Fotos </h2>
-				<div class="row">
+				<div class="row" id="listaFotos">
 					<div class="col-xs-6 col-sm-6 col-md-3 ">
+
 						<a href="#" class="thumbnail">
 							<img src="https://bit.ly/2ydlvI1" alt="...">
 						</a>
@@ -160,8 +167,16 @@
 			</div>
 
 		</div>
-	</div>
+		<div id="conteudo_deslogado">
+			<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-5 col-md-offset-3 col-lg-5 col-lg-offset-3">
 
+				<h4>Login</h4>
+				<div>
+					<div class="g-signin2" data-onsuccess="onSignIn"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<script src="assets/js/script.js"></script>
 </body>
 
